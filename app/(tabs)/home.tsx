@@ -1,51 +1,22 @@
-import { View, ScrollView, StyleSheet } from 'react-native';
-import PostCard from '@/components/PostCard'; // Ajuste o caminho conforme sua estrutura
+import React from 'react';
+import { View, StyleSheet, SafeAreaView, StatusBar, Image } from 'react-native';
+import PostFeed from '@/components/PostCard';
+      
 
-export default function Home() {
-  
-  const posts = [
-    {
-      id: 1,
-      username: 'CarLover',
-      avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
-      content: 'Just bought my dream car today! 🚗💨',
-      image: 'https://source.unsplash.com/random/600x400/?car',
-      likes: 156,
-      comments: 23,
-    },
-    {
-      id: 2,
-      username: 'SpeedRacer',
-      avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
-      content: 'Track day with the crew! #SpeedDemons',
-      image: 'https://source.unsplash.com/random/600x400/?racecar',
-      likes: 289,
-      comments: 45,
-    },
-  ];
-
+const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <ScrollView>
-        {posts.map((post) => (
-          <PostCard
-            key={post.id}
-            username={post.username}
-            avatar={post.avatar}
-            content={post.content}
-            image={post.image}
-            likes={post.likes}
-            comments={post.comments}
-          />
-        ))}
-      </ScrollView>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="light-content" backgroundColor="#000" />
+      <PostFeed />
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#121212', // Cor de fundo escura
+    backgroundColor: '#000',
   },
 });
+
+export default HomeScreen;
