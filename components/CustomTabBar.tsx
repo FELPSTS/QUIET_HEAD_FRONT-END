@@ -1,6 +1,7 @@
 import { Link, usePathname } from 'expo-router';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function CustomTabBar() {
   const pathname = usePathname();
